@@ -3,10 +3,20 @@ import { CryptoCurrencyIds } from ".";
 
 export type NFTStandards = "ERC721" | "ERC1155";
 
+export type NFTMediaSizes = "preview" | "big" | "original";
+
+export type NFTMedias = Record<
+  NFTMediaSizes,
+  {
+    uri: string;
+    mediaType: string; // mime-type
+  }
+>;
+
 export type NFTMetadata = {
   tokenName: string | null;
   nftName: string | null;
-  media: string | null;
+  medias: NFTMedias;
   description: string | null;
   properties: Array<Record<"key" | "value", string>>;
   links: Record<NFTMetadataLinksProviders, string>;
@@ -36,7 +46,11 @@ export type NFT = Omit<ProtoNFT, "metadata"> & {
   metadata: NFTMetadata;
 };
 
-export type NFTMetadataLinksProviders = "opensea" | "rarible" | "etherscan";
+export type NFTMetadataLinksProviders =
+  | "opensea"
+  | "rarible"
+  | "etherscan"
+  | "explorer";
 
 export type NFTMetadataResponse = {
   status: 200 | 404 | 500;
@@ -45,7 +59,7 @@ export type NFTMetadataResponse = {
     tokenId: string;
     tokenName: string | null;
     nftName: string | null;
-    media: string | null;
+    medias: NFTMedias;
     description: string | null;
     properties: Array<Record<"key" | "value", string>>;
     links: Record<NFTMetadataLinksProviders, string>;
