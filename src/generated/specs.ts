@@ -14,6 +14,8 @@ import ethereum from "../families/ethereum/specs";
 
 import filecoin from "../families/filecoin/specs";
 
+import meter from "../families/meter/specs";
+
 import polkadot from "../families/polkadot/specs";
 
 import ripple from "../families/ripple/specs";
@@ -36,6 +38,7 @@ export default {
   elrond,
   ethereum,
   filecoin,
+  meter,
   polkadot,
   ripple,
   solana,

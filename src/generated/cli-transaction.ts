@@ -14,6 +14,8 @@ import ethereum from "../families/ethereum/cli-transaction";
 
 import filecoin from "../families/filecoin/cli-transaction";
 
+import meter from "../families/meter/cli-transaction";
+
 import polkadot from "../families/polkadot/cli-transaction";
 
 import ripple from "../families/ripple/cli-transaction";
@@ -36,6 +38,7 @@ export default {
   elrond,
   ethereum,
   filecoin,
+  meter,
   polkadot,
   ripple,
   solana,
